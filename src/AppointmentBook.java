@@ -32,4 +32,8 @@ public class AppointmentBook {
         }
     }
 
+    public ArrayList<Object> getAppBook() {
+        return appBook;
+    }
+
 }

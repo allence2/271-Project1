@@ -43,4 +43,13 @@ public abstract class Appointment {
      * @return
      */
     public abstract boolean occursOn(int year, int month, int day);
+
+    /**
+     * Returns the integer of the corresponding month
+     * 
+     * @return
+     */
+    public int getMonth() {
+        return date.get(Calendar.MONTH);
+    }
 }
