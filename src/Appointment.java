@@ -2,11 +2,12 @@ package src;
 
 import java.util.GregorianCalendar;
 
-public class Appointment {
+public abstract class Appointment {
 
     private boolean monthly;
     private boolean daily;
     private GregorianCalendar date;
+    private String AptDescription;
 
     /**
      * Constructor that is used for One Time and Monthly appointments.
@@ -16,10 +17,11 @@ public class Appointment {
      * @param year    - year of the date
      * @param monthly - if the appointment is monthly
      */
-    public Appointment(int month, int day, int year, boolean monthly) {
+    public Appointment(String description, int month, int day, int year, boolean monthly) {
         this.date = new GregorianCalendar(year, month, day);
         this.daily = false;
         this.monthly = monthly;
+        this.AptDescription = description;
     }
 
     /**
@@ -28,4 +30,15 @@ public class Appointment {
     public Appointment() {
         this.daily = true;
     }
+
+    /**
+     * Abstract method for checking if the date occurs on, each appointment subtype
+     * will have it's own implementation of this method
+     * 
+     * @param year
+     * @param month
+     * @param day
+     * @return
+     */
+    public abstract boolean occursOn(int year, int month, int day);
 }
