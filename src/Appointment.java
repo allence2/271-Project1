@@ -1,12 +1,14 @@
 package src;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public abstract class Appointment {
 
+    Calendar date = new GregorianCalendar();
+
     private boolean monthly;
     private boolean daily;
-    private GregorianCalendar date;
     private String AptDescription;
 
     /**
