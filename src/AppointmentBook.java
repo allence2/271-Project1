@@ -3,6 +3,8 @@ package src;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class AppointmentBook {
 
@@ -37,8 +39,19 @@ public class AppointmentBook {
         return appBook;
     }
 
-    public static void save(Appointment app, File fileName) {
+    public static void save(Appointment app, File fileName) throws IOException {
+        try {
+            if (!fileName.exists()) {
+                fileName.createNewFile();
+            }
+            FileWriter fw = new FileWriter(fileName, true);
+            fw.append(app.toString());
+            fw.append(String.format("%n"));
+            fw.close();
 
+        } catch (IOException e) {
+            System.out.println("Could not log appointment to File.");
+        }
     }
 
     public void load() {
