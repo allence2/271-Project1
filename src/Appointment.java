@@ -17,8 +17,8 @@ public abstract class Appointment {
      * @param year    - year of the date
      * @param monthly - if the appointment is monthly
      */
-    public Appointment(String description, int month, int day, int year, boolean monthly) {
-        this.date = new GregorianCalendar(year, month, day);
+    public Appointment(String description, GregorianCalendar date, boolean monthly) {
+        this.date = date;
         this.daily = false;
         this.monthly = monthly;
         this.AptDescription = description;

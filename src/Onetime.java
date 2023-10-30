@@ -1,8 +1,10 @@
 package src;
 
+import java.util.GregorianCalendar;
+
 public class Onetime extends Appointment {
-    public Onetime(String description, int month, int day, int year) {
-        super(description, month, day, year, false);
+    public Onetime(String description, GregorianCalendar date) {
+        super(description, date, false);
     }
 
     public boolean occursOn(int year, int month, int day) {
