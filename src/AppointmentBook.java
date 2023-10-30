@@ -2,6 +2,7 @@ package src;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.io.File;
 
 public class AppointmentBook {
 
@@ -34,6 +35,14 @@ public class AppointmentBook {
 
     public ArrayList<Object> getAppBook() {
         return appBook;
+    }
+
+    public static void save(Appointment app, File fileName) {
+
+    }
+
+    public void load() {
+
     }
 
 }
