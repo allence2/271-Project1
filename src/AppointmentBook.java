@@ -2,7 +2,9 @@ package src;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -54,8 +56,26 @@ public class AppointmentBook {
         }
     }
 
-    public void load() {
+    public void load(String fileName) throws FileNotFoundException {
+        Scanner in = new Scanner(new File(fileName));
 
+        while (in.hasNextLine()) {
+            String app = in.nextLine();
+            int year = Integer.parseInt(app.substring((app.indexOf("-", 25) + 1), app.indexOf(":")));
+            int month = Integer.parseInt(app.substring(22, app.indexOf("-")));
+            int day = Integer.parseInt(app.substring(app.indexOf("-") + 1, (app.indexOf("-", 25))));
+            String descString = app.substring((app.indexOf(":") + 2), app.length());
+            GregorianCalendar appDate = new GregorianCalendar(year, month, day);
+            if (app.charAt(0) == 'O') {
+                addAppointment(Type.ONETIME, descString, appDate);
+            } else if (app.charAt(0) == 'M') {
+                addAppointment(Type.MONTHLY, descString, appDate);
+            } else if (app.charAt(0) == 'D') {
+                addAppointment(Type.DAILY, descString, appDate);
+            }
+        }
+
+        in.close();
     }
 
 }

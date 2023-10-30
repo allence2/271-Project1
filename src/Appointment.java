@@ -59,9 +59,9 @@ public abstract class Appointment {
                 + date.get(Calendar.YEAR);
         String appType = null;
         if (this instanceof Onetime) {
-            appType = "Onetime Appointment     ";
+            appType = "Onetime Appointment   ";
         } else if (this instanceof Monthly) {
-            appType = "Monthly Appointment     ";
+            appType = "Monthly Appointment   ";
         } else if (this instanceof Daily) {
             appType = "Daily Appointment     ";
         }
