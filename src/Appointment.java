@@ -6,9 +6,6 @@ import java.util.GregorianCalendar;
 public abstract class Appointment {
 
     Calendar date = new GregorianCalendar();
-
-    private boolean monthly;
-    private boolean daily;
     private String AptDescription;
 
     /**
@@ -19,18 +16,9 @@ public abstract class Appointment {
      * @param year    - year of the date
      * @param monthly - if the appointment is monthly
      */
-    public Appointment(String description, GregorianCalendar date, boolean monthly) {
+    public Appointment(String description, GregorianCalendar date) {
         this.date = date;
-        this.daily = false;
-        this.monthly = monthly;
         this.AptDescription = description;
-    }
-
-    /**
-     * Constructor that will create a daily appointment.
-     */
-    public Appointment() {
-        this.daily = true;
     }
 
     /**

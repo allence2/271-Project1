@@ -56,8 +56,8 @@ public class AppointmentBook {
         }
     }
 
-    public void load(String fileName) throws FileNotFoundException {
-        Scanner in = new Scanner(new File(fileName));
+    public void load(File fileName) throws FileNotFoundException {
+        Scanner in = new Scanner(fileName);
 
         while (in.hasNextLine()) {
             String app = in.nextLine();

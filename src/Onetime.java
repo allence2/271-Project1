@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 
 public class Onetime extends Appointment {
     public Onetime(String description, GregorianCalendar date) {
-        super(description, date, false);
+        super(description, date);
     }
 
     public boolean occursOn(int year, int month, int day) {
