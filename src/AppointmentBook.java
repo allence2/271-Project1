@@ -24,16 +24,15 @@ public class AppointmentBook {
      * @param date    - Date of the appointemnt
      */
     public void addAppointment(Type appType, String desc, GregorianCalendar date) {
-        switch (appType) {
-            case ONETIME:
-                appBook.add(new Onetime(desc, date));
-                break;
-            case MONTHLY:
-                appBook.add(new Monthly(desc, date));
-                break;
-            case DAILY:
-                appBook.add(new Onetime(desc, date));
-                break;
+        if (appType == Type.ONETIME) {
+            Onetime o = new Onetime(desc, date);
+            appBook.add(o);
+        } else if (appType == Type.DAILY) {
+            Daily d = new Daily(desc, date);
+            appBook.add(d);
+        } else if (appType == Type.MONTHLY) {
+            Monthly m = new Monthly(desc, date);
+            appBook.add(m);
         }
     }
 

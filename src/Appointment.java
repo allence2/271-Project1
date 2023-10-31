@@ -43,7 +43,7 @@ public abstract class Appointment {
 
     @Override
     public String toString() {
-        String dateFormattedString = date.get(Calendar.DAY_OF_MONTH) + "-" + date.get(Calendar.MONTH) + "-"
+        String dateFormattedString = +date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH) + "-"
                 + date.get(Calendar.YEAR);
         String appType = null;
         if (this instanceof Onetime) {
