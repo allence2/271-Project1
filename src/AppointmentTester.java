@@ -18,7 +18,7 @@ public class AppointmentTester {
         ab.addAppointment(AppointmentBook.Type.MONTHLY, "My birthday", new GregorianCalendar(1997, 12, 30));
 
         Appointment a = new Onetime("die", new GregorianCalendar(3004, 04, 17));
-        Appointment b = new Daily("eat", new GregorianCalendar(2023, 10, 30));
+        Appointment b = new Daily("eat", new GregorianCalendar(1997, 10, 30));
         Appointment c = new Monthly("play", new GregorianCalendar(2009, 10, 15));
 
         /**

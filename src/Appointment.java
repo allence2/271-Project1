@@ -32,15 +32,6 @@ public abstract class Appointment {
      */
     public abstract boolean occursOn(int year, int month, int day);
 
-    /**
-     * Returns the integer of the corresponding month
-     * 
-     * @return
-     */
-    public int getMonth() {
-        return date.get(Calendar.MONTH);
-    }
-
     @Override
     public String toString() {
         String dateFormattedString = +date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH) + "-"

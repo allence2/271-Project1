@@ -10,7 +10,7 @@ public class Monthly extends Appointment {
     public boolean occursOn(int year, int month, int day) {
         GregorianCalendar compareDate = new GregorianCalendar(year, month, day);
 
-        if (compareDate.equals(date) || compareDate.after(date) && day == date.get(super.getMonth())) {
+        if (compareDate.equals(this.date) || compareDate.after(this.date) && day == this.date.get(this.date.DATE)) {
             return true;
         }
         return false;

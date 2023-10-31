@@ -10,7 +10,7 @@ public class Daily extends Appointment {
     public boolean occursOn(int year, int month, int day) {
         GregorianCalendar compareDate = new GregorianCalendar(year, month, day);
 
-        if (compareDate.equals(date) || compareDate.after(date)) {
+        if (compareDate.equals(this.date) || compareDate.after(this.date)) {
             return true;
         }
         return false;
