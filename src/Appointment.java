@@ -3,13 +3,19 @@ package src;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+/**
+ * Superclass for the object appointment, subclasses: Onetime, Daily, Monthly
+ */
 public abstract class Appointment {
 
-    Calendar date = new GregorianCalendar();
+    /**
+     * Instance Variables
+     */
+    GregorianCalendar date = new GregorianCalendar();
     private String AptDescription;
 
     /**
-     * Constructor that is used for One Time and Monthly appointments.
+     * Super constructor that sets the date, description variables
      * 
      * @param month   - month of the year
      * @param day     - day of the month
@@ -32,9 +38,13 @@ public abstract class Appointment {
      */
     public abstract boolean occursOn(int year, int month, int day);
 
+    /**
+     * Override the toString() Method to properly format the type of appointment,
+     * date, and description
+     */
     @Override
     public String toString() {
-        String dateFormattedString = +date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH) + "-"
+        String dateFormattedString = date.get(Calendar.MONTH) + "-" + date.get(Calendar.DAY_OF_MONTH) + "-"
                 + date.get(Calendar.YEAR);
         String appType = null;
         if (this instanceof Onetime) {

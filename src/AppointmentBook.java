@@ -10,6 +10,9 @@ import java.io.IOException;
 
 public class AppointmentBook {
 
+    /**
+     * ENUM types for each subtype of appointment
+     */
     public enum Type {
         ONETIME, MONTHLY, DAILY;
     }
@@ -36,10 +39,23 @@ public class AppointmentBook {
         }
     }
 
+    /**
+     * Returns the collection of appointments in the AppointmentBook object
+     * 
+     * @return - AppointmentBook object
+     */
     public ArrayList<Object> getAppBook() {
         return appBook;
     }
 
+    /**
+     * Save parameterized appointment object to parameterized file with proper
+     * formatting
+     * 
+     * @param app      - Appointment object to be added to file
+     * @param fileName - File object that the appointment will be added to
+     * @throws IOException
+     */
     public static void save(Appointment app, File fileName) throws IOException {
         try {
             if (!fileName.exists()) {
@@ -55,6 +71,12 @@ public class AppointmentBook {
         }
     }
 
+    /**
+     * Load appointments from parameterized, formatted file
+     * 
+     * @param fileName - File object that contains the appointments
+     * @throws FileNotFoundException
+     */
     public void load(File fileName) throws FileNotFoundException {
         Scanner in = new Scanner(fileName);
 

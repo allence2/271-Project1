@@ -8,18 +8,24 @@ import java.util.Scanner;
 
 public class AppointmentTester {
 
+    /**
+     * Main Class used for testing classes and methods
+     * 
+     * @param args - No Arguments Accepted
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         AppointmentBook ab = new AppointmentBook();
         ArrayList<Object> appBook = ab.getAppBook();
         Scanner in = new Scanner(System.in);
 
-        ab.addAppointment(AppointmentBook.Type.ONETIME, "Work", new GregorianCalendar(2023, 01, 01));
-        ab.addAppointment(AppointmentBook.Type.DAILY, "School", new GregorianCalendar(2023, 07, 15));
+        ab.addAppointment(AppointmentBook.Type.ONETIME, "Work", new GregorianCalendar(2023, 11, 01));
+        ab.addAppointment(AppointmentBook.Type.DAILY, "School", new GregorianCalendar(2023, 11, 15));
         ab.addAppointment(AppointmentBook.Type.MONTHLY, "My birthday", new GregorianCalendar(1997, 12, 30));
 
         Appointment a = new Onetime("die", new GregorianCalendar(3004, 04, 17));
-        Appointment b = new Daily("eat", new GregorianCalendar(1997, 10, 30));
-        Appointment c = new Monthly("play", new GregorianCalendar(2009, 10, 15));
+        Appointment b = new Daily("eat", new GregorianCalendar(1997, 7, 30));
+        Appointment c = new Monthly("play", new GregorianCalendar(2009, 11, 15));
 
         /**
          * tests if the first three constructors are accurately setting the appointments
